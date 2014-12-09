@@ -1,0 +1,64 @@
+html, body {
+    margin:0;
+    width:100%;
+    height:100%;
+}
+.cam-video {
+    width:100%;
+    height:100%;
+    margin:auto;
+    background-color:black;
+    display:block;
+}
+
+.error {
+    text-align:center;
+    color:red;
+}
+
+.buttons {
+    position:fixed;
+    left:0;
+    right:0;
+    text-align:center;
+    bottom: 20%;
+    display:none;
+}
+
+.countdown {
+    font-size:100px;
+    position:fixed;
+    left:0;
+    right:0;
+    text-align:center;
+    top:40%;
+    color:white;
+    text-shadow: black 3px 3px 3px;
+    display:none;
+    font-family: sans-serif;
+}
+
+.thumb,
+.thumb-canvas,
+.photo,
+.photo-canvas {
+    display:none;
+}
+
+.photo {
+    max-width:100%;
+    max-height:100%;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    margin:auto;
+}
+
+.thumb {
+    position:fixed;
+    bottom:0;
+    right:0;
+    max-height:50%;
+    max-width:50%;
+}
