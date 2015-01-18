@@ -88,10 +88,14 @@ function init() {
     thumb = document.getElementById('thumb');
     thumbCanvas = document.getElementById('thumb-canvas');
     thumbContext = thumbCanvas.getContext('2d');
-    navigator.getMedia({
-        video: true,
-        audio: false
-    }, displayCam, displayError);
+    navigator.getMedia(
+        {
+            video: true,
+            audio: false
+        },
+        displayCam,
+        displayError
+    );
     document.getElementById('start-btn').addEventListener('click', startPictures, false);
 }
 

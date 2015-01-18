@@ -1,48 +1,50 @@
 /*jslint node: true */
 module.exports = function (grunt) {
     'use strict';
-    grunt.initConfig({
-        uglify: {
-            combine: {
-                files: {
-                    'dist/main.js': ['js/main.js']
+    grunt.initConfig(
+        {
+            uglify: {
+                combine: {
+                    files: {
+                        'dist/main.js': ['js/main.js']
+                    },
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            },
+            cssmin: {
+                combine: {
+                    files: {
+                        'dist/main.css': ['css/main.css']
+                    }
+                }
+            },
+            watch: {
+                scripts: {
+                    files: ['js/*.js'],
+                    tasks: ['uglify']
                 },
-                options: {
-                    sourceMap: true
+                styles: {
+                    files: ['css/*.css'],
+                    tasks: ['cssmin']
                 }
-            }
-        },
-        cssmin: {
-            combine: {
-                files: {
-                    'dist/main.css': ['css/main.css']
+            },
+            csslint: {
+                css: {
+                    src: ['css/main.css']
                 }
-            }
-        },
-        watch: {
-            scripts: {
-                files: ['js/*.js'],
-                tasks: ['uglify']
             },
-            styles: {
-                files: ['css/*.css'],
-                tasks: ['cssmin']
-            }
-        },
-        csslint: {
-            css: {
-                src: ['css/main.css']
-            }
-        },
-        jslint: {
-            js: {
-                src: ['js/main.js']
-            },
-            Gruntfile: {
-                src: ['Gruntfile.js']
+            jslint: {
+                js: {
+                    src: ['js/main.js']
+                },
+                Gruntfile: {
+                    src: ['Gruntfile.js']
+                }
             }
         }
-    });
+    );
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
